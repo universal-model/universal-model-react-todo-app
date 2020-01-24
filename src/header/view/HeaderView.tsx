@@ -1,6 +1,6 @@
 import * as React from 'react';
-import store from '../store/store';
-import changeUserName from './model/actions/changeUserName';
+import store from '../../store/store';
+import changeUserName from '../model/actions/changeUserName';
 
 const HeaderView = () => {
   const { headerState } = store.getState();
