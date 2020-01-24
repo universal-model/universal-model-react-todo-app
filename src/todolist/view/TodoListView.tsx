@@ -1,12 +1,12 @@
 import * as React from 'react';
 import { useEffect } from 'react';
-import store from '../../store/store';
-import { Todo } from '../model/state/initialTodoListState';
-import removeTodo from '../model/actions/removeTodo';
-import fetchTodos from '../model/actions/fetchTodos';
-import todoListController from '../controller/todoListController';
-import toggleIsDoneTodo from '../model/actions/toggleIsDoneTodo';
-import toggleShouldShowOnlyUnDoneTodos from '../model/actions/toggleShouldShowOnlyUnDoneTodos';
+import store from '@/store/store';
+import { Todo } from '@/todolist/model/state/initialTodoListState';
+import removeTodo from '@/todolist/model/actions/removeTodo';
+import fetchTodos from '@/todolist/model/actions/fetchTodos';
+import todoListController from '@/todolist/controller/todoListController';
+import toggleIsDoneTodo from '@/todolist/model/actions/toggleIsDoneTodo';
+import toggleShouldShowOnlyUnDoneTodos from '@/todolist/model/actions/toggleShouldShowOnlyUnDoneTodos';
 
 const TodoListView = () => {
   const [{ todosState }, { shownTodos }] = store.getStateAndSelectors();

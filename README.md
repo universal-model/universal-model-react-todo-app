@@ -1,3 +1,3 @@
-# Universal Model Vue Todo App
+# Universal Model React Todo App
 
 

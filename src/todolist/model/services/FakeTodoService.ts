@@ -1,6 +1,6 @@
-import { ITodoService } from './ITodoService';
-import { Todo } from '../state/initialTodoListState';
-import Constants from '../../../Constants';
+import { ITodoService } from '@/todolist/model/services/ITodoService';
+import { Todo } from '@/todolist/model/state/initialTodoListState';
+import Constants from '@/Constants';
 
 export default class FakeTodoService implements ITodoService {
   tryFetchTodos(): Promise<Todo[]> {

@@ -8,7 +8,10 @@ module.exports = (env = {}) => ({
     filename: "build.js"
   },
   resolve: {
-    extensions: ['.webpack.js', '.web.js', '.ts', '.tsx', '.js', 'jsx']
+    extensions: ['.webpack.js', '.web.js', '.ts', '.tsx', '.js', 'jsx'],
+    alias: {
+      "@": path.resolve(__dirname, "./src")
+    }
   },
   module: {
     rules: [

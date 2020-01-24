@@ -1,5 +1,5 @@
-import store from '../../../store/store';
-import todoService from '../services/todoService';
+import store from '@/store/store';
+import todoService from '@/todolist/model/services/todoService';
 
 export default async function fetchTodos(): Promise<void> {
   const { todosState } = store.getState();

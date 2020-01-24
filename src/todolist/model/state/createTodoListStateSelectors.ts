@@ -1,5 +1,5 @@
-import { State } from '../../../store/store';
-import { Todo } from './initialTodoListState';
+import { State } from '@/store/store';
+import { Todo } from '@/todolist/model/state/initialTodoListState';
 
 const createTodoListStateSelectors = <T extends State>() => ({
   shownTodos: (state: T) =>

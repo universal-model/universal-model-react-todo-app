@@ -1,4 +1,4 @@
-import { Todo } from '../state/initialTodoListState';
+import { Todo } from '@/todolist/model/state/initialTodoListState';
 
 export interface ITodoService {
   tryFetchTodos(): Promise<Todo[]>;
