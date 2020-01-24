@@ -9,10 +9,8 @@ import toggleIsDoneTodo from '../model/actions/toggleIsDoneTodo';
 import toggleShouldShowOnlyUnDoneTodos from '../model/actions/toggleShouldShowOnlyUnDoneTodos';
 
 const TodoListView = () => {
-  const { todosState } = store.getState();
-  store.useState([todosState]);
-  const { shownTodos } = store.getSelectors();
-  store.useSelectors([shownTodos]);
+  const [{ todosState }, { shownTodos }] = store.getStateAndSelectors();
+  store.useStateAndSelectors([todosState], [shownTodos]);
 
   useEffect(() => {
     // noinspection JSIgnoredPromiseFromCall
