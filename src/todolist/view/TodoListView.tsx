@@ -9,8 +9,8 @@ import toggleIsDoneTodo from '@/todolist/model/actions/toggleIsDoneTodo';
 import toggleShouldShowOnlyUnDoneTodos from '@/todolist/model/actions/toggleShouldShowOnlyUnDoneTodos';
 
 const TodoListView = () => {
-  const [{ todosState }, { shownTodos }] = store.getStateAndSelectors();
-  store.useStateAndSelectors([todosState], [shownTodos]);
+  const [{ todosState }, { shownTodos, userName }] = store.getStateAndSelectors();
+  store.useStateAndSelectors([todosState], [shownTodos, userName]);
 
   useEffect(() => {
     // noinspection JSIgnoredPromiseFromCall
@@ -26,7 +26,7 @@ const TodoListView = () => {
   } else if (todosState.hasTodosFetchFailure) {
     todoListContent = <div>Failed to fetch todos</div>;
   } else {
-    const todoListItems = shownTodos.value.map((todo: Todo, index: number) => (
+    const todoListItems = shownTodos.value.map((todo: Todo) => (
       <li key={todo.id}>
         <input
           id={todo.name}
@@ -34,7 +34,9 @@ const TodoListView = () => {
           defaultChecked={todo.isDone}
           onChange={() => toggleIsDoneTodo(todo)}
         />
-        <label>{todo.name}</label>
+        <label>
+          {userName.value}: {todo.name}
+        </label>
         <button onClick={() => removeTodo(todo)}>Remove</button>
       </li>
     ));
