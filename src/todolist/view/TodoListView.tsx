@@ -15,8 +15,8 @@ const TodoListView = () => {
   useEffect(() => {
     // noinspection JSIgnoredPromiseFromCall
     fetchTodos();
-    document.addEventListener('keydown', todoListController.handleKeyPress);
-    return () => document.removeEventListener('keydown', todoListController.handleKeyPress);
+    document.addEventListener('keydown', todoListController.handleKeyDown);
+    return () => document.removeEventListener('keydown', todoListController.handleKeyDown);
   }, []);
 
   let todoListContent;
